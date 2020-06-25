@@ -5,11 +5,11 @@ services:
         build:
             context: .
         ports: 
-            - "80"
+            - "8000:8000"
         volumes: 
             - ./app:/app
         command: >
-            sh -c "pyhton manage.py runserver 0.0.0.0:80"
+            sh -c "python manage.py runserver 0.0.0.0:8000"
         environment: 
-            - VIRTUAL_HOST=django.dd4f.sh
+            - VIRTUAL_HOST=django.dd4f.sh,www.django.dd4f.sh
         
