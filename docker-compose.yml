@@ -2,14 +2,12 @@ version: "3"
 
 services:
     app:
-        build:
-            context: .
+        build: .
         ports: 
             - "8000:8000"
         volumes: 
-            - ./app:/app
-        command: >
-            sh -c "python manage.py runserver 0.0.0.0:8000"
+            - .:/app
+        command: python manage.py runserver 0.0.0.0:8000
         environment: 
             - VIRTUAL_HOST=django.dd4f.sh,www.django.dd4f.sh
         
